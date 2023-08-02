@@ -11,6 +11,8 @@
 		1756E6D52A7AE9DD00A6AA80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756E6D42A7AE9DD00A6AA80 /* ContentView.swift */; };
 		1756E6D72A7AE9DF00A6AA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1756E6D62A7AE9DF00A6AA80 /* Assets.xcassets */; };
 		1756E6DA2A7AE9DF00A6AA80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1756E6D92A7AE9DF00A6AA80 /* Preview Assets.xcassets */; };
+		1765ED062A7AEC4000E08B72 /* LoadWorkoutsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765ED052A7AEC4000E08B72 /* LoadWorkoutsAction.swift */; };
+		1765ED082A7AECE600E08B72 /* WorkoutDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765ED072A7AECE600E08B72 /* WorkoutDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,9 @@
 		1756E6D62A7AE9DF00A6AA80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1756E6D92A7AE9DF00A6AA80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1756E6E02A7AEACD00A6AA80 /* Tempo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tempo.entitlements; sourceTree = "<group>"; };
+		1765ED052A7AEC4000E08B72 /* LoadWorkoutsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWorkoutsAction.swift; sourceTree = "<group>"; };
+		1765ED072A7AECE600E08B72 /* WorkoutDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailsView.swift; sourceTree = "<group>"; };
+		177B17012A7AEE33007A1FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +57,12 @@
 		1756E6D12A7AE9DD00A6AA80 /* Tempo */ = {
 			isa = PBXGroup;
 			children = (
+				177B17012A7AEE33007A1FC9 /* Info.plist */,
 				1756E6E02A7AEACD00A6AA80 /* Tempo.entitlements */,
 				1756E6D22A7AE9DD00A6AA80 /* TempoApp.swift */,
 				1756E6D42A7AE9DD00A6AA80 /* ContentView.swift */,
+				1765ED072A7AECE600E08B72 /* WorkoutDetailsView.swift */,
+				1765ED052A7AEC4000E08B72 /* LoadWorkoutsAction.swift */,
 				1756E6D62A7AE9DF00A6AA80 /* Assets.xcassets */,
 				1756E6D82A7AE9DF00A6AA80 /* Preview Content */,
 			);
@@ -141,6 +149,8 @@
 			files = (
 				1756E6D52A7AE9DD00A6AA80 /* ContentView.swift in Sources */,
 				1756E6D32A7AE9DD00A6AA80 /* TempoApp.swift in Sources */,
+				1765ED062A7AEC4000E08B72 /* LoadWorkoutsAction.swift in Sources */,
+				1765ED082A7AECE600E08B72 /* WorkoutDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +283,11 @@
 				DEVELOPMENT_TEAM = 9HX5X52TGA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tempo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tempo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "To read health data.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "To write health data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -310,9 +322,11 @@
 				DEVELOPMENT_TEAM = 9HX5X52TGA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tempo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tempo;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "To read health data.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "To write health data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
