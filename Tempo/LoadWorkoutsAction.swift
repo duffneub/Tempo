@@ -140,7 +140,7 @@ struct LoadWorkoutsAction {
         return try await store.samples(
             ofType: workoutType,
             predicate: nil,//inTheLastWeek,
-            limit: 10,
+            limit: 100,
             sortDescriptors: [sortByDate]
         )
     }

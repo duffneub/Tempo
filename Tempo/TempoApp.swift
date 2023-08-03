@@ -12,12 +12,12 @@ import SwiftUI
 struct TempoApp: App {
     let healthStore = HKHealthStore()
 
-    @State private var workouts: [HKWorkout] = []
+    @State private var workouts: [Date: [HKWorkout]] = [:]
 
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ContentView(workouts: $workouts)
+                WorkoutList()
                     .environment(\.loadWorkouts, .init(store: healthStore))
                     .navigationDestination(for: HKWorkout.self, destination: WorkoutDetailsView.init)
             }

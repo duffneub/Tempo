@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1719CBE12A7B48EE0072751E /* HKWorkoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719CBE02A7B48EE0072751E /* HKWorkoutExtensions.swift */; };
+		1719CBE32A7B49320072751E /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719CBE22A7B49320072751E /* DateExtensions.swift */; };
+		1719CBE52A7B493F0072751E /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719CBE42A7B493F0072751E /* SequenceExtensions.swift */; };
 		1756E6D32A7AE9DD00A6AA80 /* TempoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756E6D22A7AE9DD00A6AA80 /* TempoApp.swift */; };
-		1756E6D52A7AE9DD00A6AA80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756E6D42A7AE9DD00A6AA80 /* ContentView.swift */; };
+		1756E6D52A7AE9DD00A6AA80 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756E6D42A7AE9DD00A6AA80 /* WorkoutList.swift */; };
 		1756E6D72A7AE9DF00A6AA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1756E6D62A7AE9DF00A6AA80 /* Assets.xcassets */; };
 		1756E6DA2A7AE9DF00A6AA80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1756E6D92A7AE9DF00A6AA80 /* Preview Assets.xcassets */; };
 		1765ED062A7AEC4000E08B72 /* LoadWorkoutsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1765ED052A7AEC4000E08B72 /* LoadWorkoutsAction.swift */; };
@@ -16,9 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1719CBE02A7B48EE0072751E /* HKWorkoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKWorkoutExtensions.swift; sourceTree = "<group>"; };
+		1719CBE22A7B49320072751E /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		1719CBE42A7B493F0072751E /* SequenceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtensions.swift; sourceTree = "<group>"; };
 		1756E6CF2A7AE9DD00A6AA80 /* Tempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1756E6D22A7AE9DD00A6AA80 /* TempoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoApp.swift; sourceTree = "<group>"; };
-		1756E6D42A7AE9DD00A6AA80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1756E6D42A7AE9DD00A6AA80 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		1756E6D62A7AE9DF00A6AA80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1756E6D92A7AE9DF00A6AA80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1756E6E02A7AEACD00A6AA80 /* Tempo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tempo.entitlements; sourceTree = "<group>"; };
@@ -60,9 +66,12 @@
 				177B17012A7AEE33007A1FC9 /* Info.plist */,
 				1756E6E02A7AEACD00A6AA80 /* Tempo.entitlements */,
 				1756E6D22A7AE9DD00A6AA80 /* TempoApp.swift */,
-				1756E6D42A7AE9DD00A6AA80 /* ContentView.swift */,
+				1756E6D42A7AE9DD00A6AA80 /* WorkoutList.swift */,
 				1765ED072A7AECE600E08B72 /* WorkoutDetailsView.swift */,
 				1765ED052A7AEC4000E08B72 /* LoadWorkoutsAction.swift */,
+				1719CBE02A7B48EE0072751E /* HKWorkoutExtensions.swift */,
+				1719CBE22A7B49320072751E /* DateExtensions.swift */,
+				1719CBE42A7B493F0072751E /* SequenceExtensions.swift */,
 				1756E6D62A7AE9DF00A6AA80 /* Assets.xcassets */,
 				1756E6D82A7AE9DF00A6AA80 /* Preview Content */,
 			);
@@ -147,10 +156,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1756E6D52A7AE9DD00A6AA80 /* ContentView.swift in Sources */,
+				1756E6D52A7AE9DD00A6AA80 /* WorkoutList.swift in Sources */,
 				1756E6D32A7AE9DD00A6AA80 /* TempoApp.swift in Sources */,
+				1719CBE52A7B493F0072751E /* SequenceExtensions.swift in Sources */,
 				1765ED062A7AEC4000E08B72 /* LoadWorkoutsAction.swift in Sources */,
 				1765ED082A7AECE600E08B72 /* WorkoutDetailsView.swift in Sources */,
+				1719CBE12A7B48EE0072751E /* HKWorkoutExtensions.swift in Sources */,
+				1719CBE32A7B49320072751E /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
