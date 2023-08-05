@@ -10,6 +10,7 @@
 		1719CBE12A7B48EE0072751E /* HKWorkoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719CBE02A7B48EE0072751E /* HKWorkoutExtensions.swift */; };
 		1719CBE32A7B49320072751E /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719CBE22A7B49320072751E /* DateExtensions.swift */; };
 		1719CBE52A7B493F0072751E /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719CBE42A7B493F0072751E /* SequenceExtensions.swift */; };
+		1748D8C62A7DFB12006359A9 /* GetWorkoutRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1748D8C52A7DFB12006359A9 /* GetWorkoutRoute.swift */; };
 		1756E6D32A7AE9DD00A6AA80 /* TempoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756E6D22A7AE9DD00A6AA80 /* TempoApp.swift */; };
 		1756E6D52A7AE9DD00A6AA80 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1756E6D42A7AE9DD00A6AA80 /* WorkoutList.swift */; };
 		1756E6D72A7AE9DF00A6AA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1756E6D62A7AE9DF00A6AA80 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		1719CBE02A7B48EE0072751E /* HKWorkoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKWorkoutExtensions.swift; sourceTree = "<group>"; };
 		1719CBE22A7B49320072751E /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		1719CBE42A7B493F0072751E /* SequenceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtensions.swift; sourceTree = "<group>"; };
+		1748D8C52A7DFB12006359A9 /* GetWorkoutRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWorkoutRoute.swift; sourceTree = "<group>"; };
 		1756E6CF2A7AE9DD00A6AA80 /* Tempo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tempo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1756E6D22A7AE9DD00A6AA80 /* TempoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoApp.swift; sourceTree = "<group>"; };
 		1756E6D42A7AE9DD00A6AA80 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				1756E6D42A7AE9DD00A6AA80 /* WorkoutList.swift */,
 				1765ED072A7AECE600E08B72 /* WorkoutDetailsView.swift */,
 				1765ED052A7AEC4000E08B72 /* LoadWorkoutsAction.swift */,
+				1748D8C52A7DFB12006359A9 /* GetWorkoutRoute.swift */,
 				1719CBE02A7B48EE0072751E /* HKWorkoutExtensions.swift */,
 				1719CBE22A7B49320072751E /* DateExtensions.swift */,
 				1719CBE42A7B493F0072751E /* SequenceExtensions.swift */,
@@ -158,6 +161,7 @@
 			files = (
 				1756E6D52A7AE9DD00A6AA80 /* WorkoutList.swift in Sources */,
 				1756E6D32A7AE9DD00A6AA80 /* TempoApp.swift in Sources */,
+				1748D8C62A7DFB12006359A9 /* GetWorkoutRoute.swift in Sources */,
 				1719CBE52A7B493F0072751E /* SequenceExtensions.swift in Sources */,
 				1765ED062A7AEC4000E08B72 /* LoadWorkoutsAction.swift in Sources */,
 				1765ED082A7AECE600E08B72 /* WorkoutDetailsView.swift in Sources */,

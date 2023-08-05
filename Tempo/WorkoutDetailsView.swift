@@ -9,9 +9,73 @@ import HealthKit
 import MapKit
 import SwiftUI
 
+struct MapFoo: UIViewRepresentable {
+    
+    private let spanPadding = 0.002
+    
+    let route: [CLLocationCoordinate2D]
+    
+    func makeUIView(context: Context) -> MKMapView {
+        let mapView = MKMapView()
+        mapView.delegate = context.coordinator
+        
+        return mapView
+    }
+    
+    func updateUIView(_ mapView: MKMapView, context: Context) {
+        mapView.removeOverlays(mapView.overlays)
+        
+        guard !route.isEmpty else { return }
+        
+        let minLatitude = route.min(by: { $0.latitude < $1.latitude })!.latitude
+        let maxLatitude = route.max(by: { $0.latitude < $1.latitude })!.latitude
+        let minLongitude = route.min(by: { $0.longitude < $1.longitude })!.longitude
+        let maxLongitude = route.max(by: { $0.longitude < $1.longitude })!.longitude
+        let span = MKCoordinateSpan(
+            latitudeDelta: maxLatitude - minLatitude + spanPadding,
+            longitudeDelta: maxLongitude - minLongitude + spanPadding
+        )
+        
+        let center = CLLocationCoordinate2D(
+            latitude: (maxLatitude - span.latitudeDelta / 2) + spanPadding / 2,
+            longitude: (maxLongitude - span.longitudeDelta / 2) + spanPadding / 2
+        )
+                
+        mapView.region = .init(center: center, span: span)
+        
+        let polyline = MKPolyline(coordinates: route, count: route.count)
+        mapView.addOverlay(polyline)
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    
+}
+
+extension MapFoo {
+    
+    class Coordinator: NSObject, MKMapViewDelegate {
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            guard let overlay = overlay as? MKPolyline else { return MKOverlayRenderer() }
+            
+            let renderer = MKPolylineRenderer(polyline: overlay)
+            renderer.strokeColor = .red
+            renderer.lineWidth = 5
+            
+            return renderer
+        }
+    }
+    
+}
+
 struct WorkoutDetailsView: View {
 
     let workout: HKWorkout
+    
+    @Environment(\.workoutRoute) private var workoutRoute
+    
+    @State private var route: [CLLocation] = []
 
     var body: some View {
         VStack {
@@ -20,7 +84,9 @@ struct WorkoutDetailsView: View {
                 .padding(.bottom)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-//            Map(coordinateRegion: .constant(.init(center: <#T##CLLocationCoordinate2D#>, latitudinalMeters: <#T##CLLocationDistance#>, longitudinalMeters: <#T##CLLocationDistance#>)))
+            // TODO: What if the workout doesn't have a route?
+            MapFoo(route: route.map(\.coordinate))
+                .aspectRatio(1.5, contentMode: .fit)
 
             Section {
 
@@ -86,6 +152,14 @@ struct WorkoutDetailsView: View {
         .padding(.horizontal)
         .onAppear {
             print("Metadata: \(workout.metadata)")
+        }
+        .task {
+            do {
+                route = try await workoutRoute(workout: workout)
+                print(route)
+            } catch {
+                print("Failed to get workout route: \(error)")
+            }
         }
     }
 }

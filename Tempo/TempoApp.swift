@@ -10,6 +10,7 @@ import SwiftUI
 
 @main
 struct TempoApp: App {
+    
     let healthStore = HKHealthStore()
 
     @State private var workouts: [Date: [HKWorkout]] = [:]
@@ -18,9 +19,10 @@ struct TempoApp: App {
         WindowGroup {
             NavigationStack {
                 WorkoutList()
-                    .environment(\.loadWorkouts, .init(store: healthStore))
                     .navigationDestination(for: HKWorkout.self, destination: WorkoutDetailsView.init)
             }
+            .environment(\.loadWorkouts, .init(store: healthStore))
+            .environment(\.workoutRoute, .init(service: healthStore))
         }
     }
 }

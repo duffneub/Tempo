@@ -20,7 +20,7 @@ protocol HealthStore {
 
 }
 
-extension HealthStore {
+private extension HealthStore {
 
     @MainActor
     func samples<S : HKSample>(
@@ -36,7 +36,6 @@ extension HealthStore {
                 limit: limit,
                 sortDescriptors: sortDescriptors
             ) { _, samples, error in
-
                 Task { @MainActor in
                     if let error {
                         continuation.resume(throwing: error)
