@@ -83,7 +83,7 @@ struct WorkoutRoute {
     
     let service: WorkoutRouteService
     
-    func callAsFunction(workout: HKWorkout) async throws -> [CLLocation] {
+    func callAsFunction(workout: HKWorkout) async throws -> [CLLocation]? {
         guard service.isHealthDataAvailable() else {
             throw HKError(.errorHealthDataUnavailable)
         }
@@ -97,12 +97,14 @@ struct WorkoutRoute {
             ]
         )
         
-        let route: HKWorkoutRoute = try await service.samples(
+        let route: HKWorkoutRoute? = try await service.samples(
             type: HKSeriesType.workoutRoute(),
             predicate: HKQuery.predicateForObjects(from: workout),
             anchor: nil,
             limit: HKObjectQueryNoLimit
-        ).first!
+        ).first
+        
+        guard let route else { return nil }
         
         return try await service.locations(for: route)
     }

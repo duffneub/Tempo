@@ -75,7 +75,7 @@ struct WorkoutDetailsView: View {
     
     @Environment(\.workoutRoute) private var workoutRoute
     
-    @State private var route: [CLLocation] = []
+    @State private var route: [CLLocation]?
 
     var body: some View {
         VStack {
@@ -84,9 +84,10 @@ struct WorkoutDetailsView: View {
                 .padding(.bottom)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            // TODO: What if the workout doesn't have a route?
-            MapFoo(route: route.map(\.coordinate))
-                .aspectRatio(1.5, contentMode: .fit)
+            if let route {
+                MapFoo(route: route.map(\.coordinate))
+                    .aspectRatio(1.5, contentMode: .fit)
+            }
 
             Section {
 
@@ -150,13 +151,9 @@ struct WorkoutDetailsView: View {
             }
         }
         .padding(.horizontal)
-        .onAppear {
-            print("Metadata: \(workout.metadata)")
-        }
         .task {
             do {
                 route = try await workoutRoute(workout: workout)
-                print(route)
             } catch {
                 print("Failed to get workout route: \(error)")
             }
